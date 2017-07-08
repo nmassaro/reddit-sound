@@ -8,8 +8,10 @@ class App extends Component {
     super(props);
     this.getPosts = this.getPosts.bind(this);
     this.togglePlaying = this.togglePlaying.bind(this);
-    this.state = { posts: [], playing: [] };
+    this.updateSubreddit = this.updateSubreddit.bind(this);
     this.start = this.start.bind(this);
+
+    this.state = { posts: [], playing: [], subreddit: 'music' };
   }
 
   componentDidMount() {
@@ -22,11 +24,16 @@ class App extends Component {
     }
   }
 
+  updateSubreddit(event) {
+    this.setState({ ...this.state, subreddit: event.target.value });
+    this.getPosts();
+  }
+
   getPosts() {
-    axios.get('https://www.reddit.com/r/music/new.json', 
+    axios.get(`https://www.reddit.com/r/${this.state.subreddit}/new.json`, 
     { params: { sort: 'activity', limit: 5 } })
     .then(response => {
-      this.setState({ posts: response.data.data.children });
+      this.setState({ ...this.state, posts: response.data.data.children });
       this.start();
     });
   }
@@ -37,7 +44,9 @@ class App extends Component {
     if (currentPost) {
       this.setState({ ...this.state,
         playing: {
-          [currentPost.data.id]: (this.state.playing[currentPost.data.id] ? false : !this.state.playing[currentPost.data.id])
+          [currentPost.data.id]: (this.state.playing[currentPost.data.id] 
+          ? false 
+          : !this.state.playing[currentPost.data.id])
         }
       });
     }
@@ -45,6 +54,11 @@ class App extends Component {
 
   render() {
     return (
+      <div>
+        <div className='subreddit-name'>
+          { '/r/' }
+          <input type='text' placeholder={this.state.subreddit} onBlur={this.updateSubreddit} />
+        </div>
       <div className='container'>
         <h1>Reddit Sound</h1>
         { this.state && this.state.posts ?
@@ -60,6 +74,7 @@ class App extends Component {
           ))
         : null
         }
+      </div>
       </div>
     );
   }
