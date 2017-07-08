@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 // import './index.css';
+import saga from './saga';
 import redditSoundApp from './reducer';
 import App from './App';
 
@@ -13,7 +14,7 @@ let store = createStore(
     applyMiddleware(sagaMiddleware)
 );
 
-sagaMiddleware.run();
+sagaMiddleware.run(saga);
 
 ReactDOM.render(
     <Provider store={store}>

@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactPlayer from 'react-player';
-// import './App.css';
+import Input from './Input';
+import * as style from './style';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.getPosts = this.getPosts.bind(this);
-    this.togglePlaying = this.togglePlaying.bind(this);
-    this.start = this.start.bind(this);
+    // this.getPosts = this.getPosts.bind(this);
+    // this.togglePlaying = this.togglePlaying.bind(this);
+    // this.start = this.start.bind(this);
   }
 
   render() {
     const { posts, playing } = this.props;
 
     return (
-      <div>
+      <style.App>
         <Input />
       <div className='container'>
         <h1>Reddit Sound</h1>
         {
+          posts ?
           posts
           .filter(post => Boolean(post.data.secure_media))
           .map((post, index) => (
@@ -30,9 +32,10 @@ class App extends Component {
               </div>
             </div>
           ))
+          : null
         }
       </div>
-      </div>
+      </style.App>
     );
   }
 }

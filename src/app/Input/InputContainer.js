@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import InputComponent from './InputComponent';
 
 class InputContainer extends Component {
     constructor(props) {

@@ -1,3 +1,6 @@
+import styled from 'styled-components';
+
+export const App = styled.div`
 * {
   box-sizing: border-box;
   font-family: 'Raleway', sans-serif;
@@ -55,3 +58,5 @@ input {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+`;
+
