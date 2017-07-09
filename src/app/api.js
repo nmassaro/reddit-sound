@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const fetchPosts = () => (
-     axios.get(`https://www.reddit.com/r/${this.state.subreddit}/new.json`, 
-    { params: { sort: 'activity', limit: 5 } })
+const fetchPosts = (subreddit) => (
+     axios.get(`https://www.reddit.com/r/${subreddit}/top.json`, 
+    { params: { t: 'week', sort: 'activity', limit: 5 } })
 );
 
 export default fetchPosts;

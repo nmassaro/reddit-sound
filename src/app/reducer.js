@@ -25,6 +25,8 @@ const redditSoundApp = (state = initialState, action) => {
   }
 }
 
+export const getSubreddit = state => state.subreddit;
+
 export default redditSoundApp;
 
 /*
