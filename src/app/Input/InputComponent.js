@@ -1,10 +1,11 @@
 import React from 'react';
+import * as style from './style';
 
 const InputComponent = (props) => (
-    <div className='subreddit-name'>
+    <style.SubredditName>
           { '/r/' }
-          <input type='text' placeholder='music' onKeyUp={props.updateSubreddit} />
-    </div>   
+          <style.Input type='text' placeholder='music' onKeyUp={props.updateSubreddit} />
+    </style.SubredditName>   
 );
 
 export default InputComponent;

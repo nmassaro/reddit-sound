@@ -11,7 +11,7 @@ class App extends Component {
       <style.App>
         <Input />
       <div className='container'>
-        <h1>Reddit Sound</h1>
+        <style.SiteTitle>Reddit Sound</style.SiteTitle>
         <PostList />
       </div>
       </style.App>

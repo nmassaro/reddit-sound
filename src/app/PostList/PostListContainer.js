@@ -5,7 +5,9 @@ import PostListComponent from './PostListComponent';
 class PostListContainer extends Component {
   render() {
     return (
-      <PostListComponent {...this.props} />
+      <PostListComponent 
+      {...this.props}
+      />
     );
   } 
 }
@@ -16,7 +18,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  togglePlaying: id => dispatch({ type: 'TOGGLE_PLAYING', id })
+  togglePlaying: index => dispatch({ type: 'TOGGLE_PLAYING', index })
 });
 
 export default connect(

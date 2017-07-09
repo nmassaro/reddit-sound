@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
+import * as style from './style';
 
 const PostListComponent = ({ posts, playing, togglePlaying }) => (
     <div>
@@ -8,10 +9,18 @@ const PostListComponent = ({ posts, playing, togglePlaying }) => (
       .filter(post => Boolean(post.data.secure_media))
       .map((post, index) => (
         <div key={index}>
-        <h1 onClick={() => togglePlaying(post.data.id, index)}>{post.data.secure_media.oembed.title}</h1>
-          <div className='center'>
-          <ReactPlayer controls playing={playing[post.data.id]} url={post.data.url} onEnded={() => this.togglePlaying(index + 1)} />
-          </div>
+            <style.TrackTitle>
+                {post.data.secure_media.oembed.title}
+            </style.TrackTitle>
+            <div className='center'>
+                <ReactPlayer
+                    style={style.ReactPlayer}
+                    controls 
+                    playing={playing === index}
+                    url={post.data.url} 
+                    onEnded={() => togglePlaying(index + 1)}
+                />
+            </div>
         </div>
       ))
       : null}

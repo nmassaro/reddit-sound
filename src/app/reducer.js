@@ -1,16 +1,24 @@
 const initialState = {
   posts: [],
-  playing: [],
+  playing: null,
   subreddit: 'music'
 }
 
 const redditSoundApp = (state = initialState, action) => {
+  console.log("Dispatched: ", action);
   switch (action.type) {
     case 'SET_SUBREDDIT':
       {
         return {
           ...state,
           subreddit: action.data
+        };
+      }
+    case 'TOGGLE_PLAYING':
+      {
+        return {
+          ...state,
+          playing: action.index
         };
       }
     case 'FETCH_POSTS_SUCCEEDED':
@@ -28,30 +36,3 @@ const redditSoundApp = (state = initialState, action) => {
 export const getSubreddit = state => state.subreddit;
 
 export default redditSoundApp;
-
-/*
-
-  togglePlaying(index) {
-    const currentPost = this.props.posts[index];
-
-    if (currentPost) {
-      this.setState({ ...this.state,
-        playing: {
-          [currentPost.data.id]: (this.state.playing[currentPost.data.id]
-          ? false
-          : !this.state.playing[currentPost.data.id])
-        }
-      });
-    }
-  }
-
-  componentDidMount() {
-    this.getPosts();
-  }
-
-  start() {
-    if (this.posts) {
-      this.togglePlaying(0);
-    }
-  }
-  */
