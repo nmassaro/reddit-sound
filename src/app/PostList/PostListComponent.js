@@ -10,7 +10,7 @@ const PostListComponent = ({ posts, playing, togglePlaying }) => (
       .map((post, index) => (
         <div key={index}>
             <style.TrackTitle>
-                {post.data.secure_media.oembed.title}
+                {post.data.title}
             </style.TrackTitle>
             <div className='center'>
                 <ReactPlayer
