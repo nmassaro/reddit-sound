@@ -14,6 +14,7 @@ class App extends Component {
         <style.SiteTitle>Reddit Sound</style.SiteTitle>
         <PostList />
       </div>
+      <Paginator />
       </style.App>
     );
   }

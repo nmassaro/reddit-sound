@@ -2,7 +2,9 @@ const initialState = {
   posts: [],
   playing: null,
   subreddit: 'music',
-  timeframe: 'weekly'
+  timeframe: 'weekly',
+  page: 1,
+  totalPages: 1
 }
 
 const redditSoundApp = (state = initialState, action) => {
@@ -22,6 +24,13 @@ const redditSoundApp = (state = initialState, action) => {
           playing: action.index
         };
       }
+    case 'SET_PAGE':
+    {
+      return {
+        ...state,
+        page: action.page
+      }
+    }
     case 'FETCH_POSTS_SUCCEEDED':
       {
         return {
