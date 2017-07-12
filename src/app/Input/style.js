@@ -7,6 +7,7 @@ export const Input = styled.input`
   padding: 0 10px;
   margin: 0;
   font-size: inherit;
+  display: inline-block;
 
   &:focus {
     outline: none;

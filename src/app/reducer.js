@@ -1,7 +1,8 @@
 const initialState = {
   posts: [],
   playing: null,
-  subreddit: 'music'
+  subreddit: 'music',
+  timeframe: 'weekly'
 }
 
 const redditSoundApp = (state = initialState, action) => {
