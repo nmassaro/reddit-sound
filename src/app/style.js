@@ -24,3 +24,9 @@ export const SiteTitle = styled.h1`
   font-family: 'Amatic SC', cursive;
   color: tomato;
 `;
+
+export const Banner = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+`;

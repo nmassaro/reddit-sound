@@ -14,7 +14,7 @@ export const Input = styled.input`
   }
 `;
 
-export const SubredditName = styled.div`
+export const SubredditName = styled.span`
   font-size: 40px;
   padding: 25px;
 `;

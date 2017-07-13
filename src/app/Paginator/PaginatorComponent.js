@@ -6,7 +6,7 @@ const PaginatorComponent = props => {
 
     return (
         <style.Paginator>
-            <button onClick={() => nextPage()}>Next</button>
+            <style.Button onClick={() => nextPage()}>Next</style.Button>
         </style.Paginator>
     )
 }

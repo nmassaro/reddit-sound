@@ -10,12 +10,14 @@ class App extends Component {
 
     return (
       <style.App>
-        <Input />
+        <style.Banner>
+          <Input />
+          <Paginator />
+        </style.Banner>
       <div className='container'>
         <style.SiteTitle>Reddit Sound</style.SiteTitle>
         <PostList />
       </div>
-      <Paginator />
       </style.App>
     );
   }
