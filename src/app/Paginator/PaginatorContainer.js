@@ -4,21 +4,21 @@ import PaginatorComponent from './PaginatorComponent';
 
 class PaginatorContainer extends Component {
     render() {
+        return (
         <PaginatorComponent 
         {...this.props}
          />
+        );
     }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    page: state.page,
-    totalPages: state.totalPages
+
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-    updatePage: page => dispatch({
-        type: 'SET_PAGE',
-        page
+    nextPage: () => dispatch({
+        type: 'FETCH_POSTS'
     })
 });
 

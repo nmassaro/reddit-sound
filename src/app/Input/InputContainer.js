@@ -37,8 +37,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
         data: subreddit
     }),
     fetchPosts: () => dispatch({
-        type: 'FETCH_POSTS',
-        subreddit: ownProps.subreddit
+        type: 'FETCH_POSTS'
     })
 });
 

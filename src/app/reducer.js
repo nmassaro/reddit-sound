@@ -3,18 +3,17 @@ const initialState = {
   playing: null,
   subreddit: 'music',
   timeframe: 'weekly',
-  page: 1,
-  totalPages: 1
+  after: null
 }
 
 const redditSoundApp = (state = initialState, action) => {
-  console.log("Dispatched: ", action);
   switch (action.type) {
     case 'SET_SUBREDDIT':
       {
         return {
           ...state,
-          subreddit: action.data
+          subreddit: action.data,
+          after: null
         };
       }
     case 'TOGGLE_PLAYING':
@@ -24,18 +23,12 @@ const redditSoundApp = (state = initialState, action) => {
           playing: action.index
         };
       }
-    case 'SET_PAGE':
-    {
-      return {
-        ...state,
-        page: action.page
-      }
-    }
     case 'FETCH_POSTS_SUCCEEDED':
       {
         return {
           ...state,
-          posts: action.posts
+          posts: action.posts,
+          after: action.posts.data.data.after
         };
       }
     default:
@@ -44,5 +37,6 @@ const redditSoundApp = (state = initialState, action) => {
 }
 
 export const getSubreddit = state => state.subreddit;
+export const getAfter = state => state.after;
 
 export default redditSoundApp;
