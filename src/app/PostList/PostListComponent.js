@@ -9,7 +9,7 @@ const PostListComponent = ({ posts, playing, togglePlaying }) => (
       .filter(post => Boolean(post.data.secure_media))
       .map((post, index) => (
         <div key={index}>
-            <style.TrackTitle>
+            <style.TrackTitle href={`https://reddit.com${post.data.permalink}`}>
                 {post.data.title}
             </style.TrackTitle>
             <div className='center'>

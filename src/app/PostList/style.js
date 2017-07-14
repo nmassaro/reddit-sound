@@ -1,8 +1,14 @@
 import styled from 'styled-components';
 
-export const TrackTitle = styled.h2`
+export const TrackTitle = styled.a`
+  display: block;
   font-size: 26px;
   text-align: center;
+  color: black;
+
+  &:link, &:hover, &:focus {
+    text-decoration: none;
+  }
 `;
 
 export const ReactPlayer = {
