@@ -7,6 +7,7 @@ export const Paginator = styled.div`
 export const Button = styled.button`
   display: inline-block;
   padding: 10px 15px;
+  cursor: pointer;
   font-size: 22px;
   outline: none;
   border-style: none;
