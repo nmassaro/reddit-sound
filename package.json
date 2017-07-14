@@ -17,7 +17,8 @@
   "scripts": {
     "start": "npm run build",
     "build": "webpack -d && cp src/index.html dist/index.html && webpack-dev-server --content-base src/ --inline --hot",
-    "build:prod": "webpack -p && cp src/index.html dist/index.html"
+    "build:prod": "webpack -p && cp src/index.html dist/index.html",
+    "postinstall": "webpack -p"
   },
   "devDependencies": {
     "babel-loader": "^7.1.1",
