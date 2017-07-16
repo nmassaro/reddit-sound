@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Input from './Input';
 import PostList from './PostList';
 import Paginator from './Paginator';
+import Panel from './Transition/Panel';
 import * as style from './style';
 
 class App extends Component {
@@ -15,6 +16,9 @@ class App extends Component {
           <Paginator />
         </style.Banner>
       <div className='container'>
+        <Panel header="Toggle">
+          Content...
+        </Panel>
         <style.SiteTitle href='/'>Reddit Sound</style.SiteTitle>
         <PostList />
       </div>
