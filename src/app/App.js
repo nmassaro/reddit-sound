@@ -15,7 +15,7 @@ class App extends Component {
           <Paginator />
         </style.Banner>
       <div className='container'>
-        <style.SiteTitle>Reddit Sound</style.SiteTitle>
+        <style.SiteTitle href='/'>Reddit Sound</style.SiteTitle>
         <PostList />
       </div>
       </style.App>
