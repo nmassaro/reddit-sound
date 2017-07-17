@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Input from './Input';
 import PostList from './PostList';
 import Paginator from './Paginator';
-import Panel from './Transition/Panel';
+import Panel from './Transitions/Panel';
 import * as style from './style';
 
 class App extends Component {
