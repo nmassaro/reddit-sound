@@ -2,6 +2,9 @@
   "name": "reddit-sound",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "8.1.4"
+  },
   "dependencies": {
     "axios": "^0.16.2",
     "es2015": "0.0.0",
