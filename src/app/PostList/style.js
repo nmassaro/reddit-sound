@@ -1,5 +1,22 @@
 import styled from 'styled-components';
 
+export const PostList = styled.div`
+animation: slide-up 1s ease-out;
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+    transform-origin: 50% 100%;
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+    transform-origin: 50% 50%;
+    opacity: 1;
+  }
+}
+`;
+
 export const TrackTitle = styled.a`
   display: block;
   font-size: 26px;

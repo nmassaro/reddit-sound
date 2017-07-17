@@ -30,9 +30,20 @@ export const SiteTitle = styled.a`
   font-size: 70px;
   font-family: 'Amatic SC', cursive;
   color: tomato;
+	animation: text-enter 1s linear;
 
   &:link, &:hover, &:visited, &:active {
     text-decoration: none;
+  }
+
+  @keyframes text-enter {
+    0% {
+      letter-spacing: 20px;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 `;
 

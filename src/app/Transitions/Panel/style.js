@@ -5,12 +5,12 @@ export const Slide = styled.div`
     max-height: 0px;
   }
   .slide-enter.slide-enter-active {
-    max-height: 100px;
+    max-height: 500px;
     overflow-y: hidden;
     transition: all 0.3s cubic-bezier(.36,.61,.64,.34);
   }
   .slide-exit {
-    max-height: 100px;
+    max-height: 500px;
     overflow-y: hidden;
   }
   .slide-exit.slide-exit-active {
