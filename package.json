@@ -8,6 +8,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "es2015": "0.0.0",
+    "express": "^4.15.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-player": "^0.18.0",
