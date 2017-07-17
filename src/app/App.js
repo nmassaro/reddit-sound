@@ -16,9 +16,6 @@ class App extends Component {
           <Paginator />
         </style.Banner>
       <div className='container'>
-        <Panel header="Toggle">
-          Content...
-        </Panel>
         <style.SiteTitle href='/'>Reddit Sound</style.SiteTitle>
         <PostList />
       </div>
