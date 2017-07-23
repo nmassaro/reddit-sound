@@ -3,12 +3,11 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
- app.use(express.static(path.join(__dirname, 'dist', 'app')));
+ app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/', function(request, response) {
-  response.sendFile(path.join(__dirname, 'dist', 'app', 'index.html'), error => {
+  response.sendFile(path.resolve(__dirname, 'app/index.html'), error => {
     if (error) console.log(error);
-    else console.log("Path", path.join(__dirname, 'index.html')); 
 })});
 
 app.listen(PORT, error => {
