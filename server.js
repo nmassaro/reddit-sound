@@ -3,11 +3,10 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-var DIST_DIR = path.resolve(__dirname, "dist");
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('/', function(request, response) {
-  response.sendFile(DIST_DIR + '/index.html');
+  response.sendFile(__dirname + '/index.html');
 });
 
 app.listen(PORT, error => {
