@@ -31,7 +31,7 @@
   },
   "scripts": {
     "start": "npm run build",
-    "build": "webpack -d && cp src/index.html dist/app/index.html && webpack-dev-server --content-base src/ --inline --hot",
+    "build": "webpack -d && cp src/index.html dist/app/index.html",
     "build:prod": "webpack -p && cp src/index.html dist/app/index.html"
   }
 }
