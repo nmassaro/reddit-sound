@@ -19,6 +19,9 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
     nextPage: () => dispatch({
         type: 'FETCH_POSTS'
+    }),
+    previousPage: () => dispatch({
+        type: 'FETCH_PREVIOUS_POSTS'
     })
 });
 

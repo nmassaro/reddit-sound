@@ -3,7 +3,8 @@ const initialState = {
   playing: null,
   subreddit: 'music',
   timeframe: 'weekly',
-  after: null
+  after: null,
+  before: null
 }
 
 const redditSoundApp = (state = initialState, action) => {
@@ -13,7 +14,8 @@ const redditSoundApp = (state = initialState, action) => {
         return {
           ...state,
           subreddit: action.data,
-          after: null
+          after: null,
+          before: null
         };
       }
     case 'TOGGLE_PLAYING':
@@ -23,14 +25,32 @@ const redditSoundApp = (state = initialState, action) => {
           playing: action.index
         };
       }
+    case 'FETCH_PREVIOUS_POSTS_SUCCEEDED':
+      {
+        return {
+          ...state,
+          posts: action.posts,
+          after: action.posts.data.data.after,
+          before: state.after
+        };
+      }
     case 'FETCH_POSTS_SUCCEEDED':
       {
         return {
           ...state,
           posts: action.posts,
-          after: action.posts.data.data.after
+          after: action.posts.data.data.after,
+          before: action.posts.data.data.before
         };
       }
+    case 'FETCH_POSTS_FAILED':
+    case 'FETCH_PREVIOUS_POSTS_FAILED':
+    {
+      return {
+        ...state,
+        error: true
+      };
+    }
     default:
       return state;
   }
@@ -38,5 +58,6 @@ const redditSoundApp = (state = initialState, action) => {
 
 export const getSubreddit = state => state.subreddit;
 export const getAfter = state => state.after;
+export const getBefore = state => state.before;
 
 export default redditSoundApp;
