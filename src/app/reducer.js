@@ -31,7 +31,7 @@ const redditSoundApp = (state = initialState, action) => {
           ...state,
           posts: action.posts,
           after: action.posts.data.data.after,
-          before: state.after
+          before: action.posts.data.data.before
         };
       }
     case 'FETCH_POSTS_SUCCEEDED':
