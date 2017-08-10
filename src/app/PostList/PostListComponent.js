@@ -13,6 +13,7 @@ const PostListComponent = ({ posts, playing, togglePlaying }) => (
             <Panel
             header={
             <style.TrackTitle onClick={() => togglePlaying(index)}>
+                <style.Upvotes>{post.data.ups}</style.Upvotes>
                 {post.data.title}
             </style.TrackTitle>
             }>

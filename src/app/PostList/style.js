@@ -18,10 +18,10 @@ animation: slide-up 1s ease-out;
 `;
 
 export const TrackTitle = styled.a`
-  display: block;
-  font-size: 26px;
+  font-size: 22px;
   text-align: center;
   color: black;
+  display: flex;
 
   &:link, &:hover, &:focus {
     text-decoration: none;
@@ -33,3 +33,9 @@ export const ReactPlayer = {
   boxShadow: '0 4px 4px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24)',
   margin: '20px 0'
 };
+
+export const Upvotes = styled.h3`
+  display: inline-block;
+  margin: 0 8px 0 0;
+  min-width: 100px;
+`;
