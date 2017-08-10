@@ -1,11 +1,10 @@
 import 'regenerator-runtime/runtime';
 import { fork, select, call, put, takeLatest } from 'redux-saga/effects';
-import { getSubreddit, getAfter, getBefore, getStartPlaying } from './reducer';
+import { getSubreddit, getAfter, getBefore, getPage, getStartPlaying } from './reducer';
 import { fetchPostsAPI, fetchPreviousPostsAPI } from './api';
 
 function* fetchPosts() {
   try {
-    console.log("Fetching posts...");
     const subreddit = yield select(getSubreddit);
     const after = yield select(getAfter);
     const posts = yield call(fetchPostsAPI, subreddit, after);
@@ -21,6 +20,8 @@ function* watchFetchPosts() {
 
 function* fetchPreviousPosts() {
   try {
+    const page = yield select(getPage);
+    if (page < 1) throw error('Already at first page.');
     const subreddit = yield select(getSubreddit);
     const before = yield select(getBefore);
     const posts = yield call(fetchPreviousPostsAPI, subreddit, before);

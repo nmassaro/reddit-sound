@@ -13,7 +13,8 @@ class PaginatorContainer extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    before: state.before
+    before: state.before,
+    pageNumber: state.page
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

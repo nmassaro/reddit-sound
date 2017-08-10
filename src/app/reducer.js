@@ -4,7 +4,8 @@ const initialState = {
   subreddit: 'music',
   timeframe: 'weekly',
   after: null,
-  before: null
+  before: null,
+  page: 0
 }
 
 const redditSoundApp = (state = initialState, action) => {
@@ -31,7 +32,8 @@ const redditSoundApp = (state = initialState, action) => {
           ...state,
           posts: action.posts,
           after: action.posts.data.data.after,
-          before: action.posts.data.data.before
+          before: action.posts.data.data.before,
+          page: state.page - 1
         };
       }
     case 'FETCH_POSTS_SUCCEEDED':
@@ -40,7 +42,8 @@ const redditSoundApp = (state = initialState, action) => {
           ...state,
           posts: action.posts,
           after: action.posts.data.data.after,
-          before: action.posts.data.data.before
+          before: action.posts.data.data.before,
+          page: state.page + 1
         };
       }
     case 'FETCH_POSTS_FAILED':
@@ -57,6 +60,7 @@ const redditSoundApp = (state = initialState, action) => {
 }
 
 export const getSubreddit = state => state.subreddit;
+export const getPage = state => state.page;
 export const getAfter = state => state.after;
 export const getBefore = state => state.before;
 
