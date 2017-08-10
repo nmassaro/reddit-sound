@@ -31,8 +31,8 @@
   },
   "scripts": {
     "start": "npm run build",
-    "build": "webpack -d --display-error-details && cp src/index.html dist/app/index.html",
-    "build:prod": "webpack -p --display-error-details && cp src/index.html dist/app/index.html",
-    "dev": "webpack-dev-server --inline --hot --content-base ./dist/app/"
+    "build": "webpack -d --display-error-details && cp src/app/index.html dist/app/index.html",
+    "build:prod": "webpack -p --display-error-details && cp src/app/index.html dist/app/index.html",
+    "dev": "webpack-dev-server --inline --hot --content-base ./src/app/"
   }
 }

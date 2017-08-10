@@ -13,10 +13,7 @@ export const Button = styled.button`
   border-style: none;
   border-radius: 12px;
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.54), 0 2px 2px 0 rgba(0,0,0,0.25);
-  background-color: tomato;
+  background-color: #ff4566;
+  text-transform: uppercase;
   color: white;
-
-  &:active {
-    transform: translateY(2px);
-  }
 `;

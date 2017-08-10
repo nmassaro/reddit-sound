@@ -29,7 +29,7 @@ export const SiteTitle = styled.a`
   text-align: center;
   font-size: 70px;
   font-family: 'Amatic SC', cursive;
-  color: tomato;
+  color: #ff4566;
 	animation: text-enter 1s linear;
 
   &:link, &:hover, &:visited, &:active {
