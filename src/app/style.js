@@ -10,12 +10,6 @@ export const App = styled.div`
     display: flex;
     justify-content: center;
   }
-
-  .container {
-    display: flex;
-    align-items: center;
-    flex-flow: column;
-  }
   
   .panel {
     padding: 20px;
@@ -45,6 +39,12 @@ export const SiteTitle = styled.a`
       opacity: 1;
     }
   }
+`;
+
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  flex-flow: column;
 `;
 
 export const Banner = styled.div`

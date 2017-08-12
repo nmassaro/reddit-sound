@@ -15,10 +15,10 @@ class App extends Component {
           <Input />
           <Paginator />
         </style.Banner>
-      <div className='container'>
+      <style.Container>
         <style.SiteTitle href='/'>Reddit Sound</style.SiteTitle>
         <PostList />
-      </div>
+      </style.Container>
       </style.App>
     );
   }
