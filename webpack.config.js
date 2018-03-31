@@ -6,7 +6,7 @@ var SRC_DIR = path.resolve(__dirname, "src");
 var config = {
     entry: SRC_DIR + "/app/index.js",
     output: {
-        path: path.join(DIST_DIR, '/app'),
+        path: path.join(DIST_DIR, 'app'),
         filename: "bundle.js",
         publicPath: "/app/"
     },
