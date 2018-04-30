@@ -10,12 +10,6 @@ export const App = styled.div`
     display: flex;
     justify-content: center;
   }
-  
-  .panel {
-    padding: 20px;
-    max-width: 75%;
-    margin: 0 auto;
-  }
 `;
 
 export const SiteTitle = styled.a`

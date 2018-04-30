@@ -34,7 +34,7 @@
     "start": "npm run build",
     "build": "webpack -d --display-error-details && cp index.html dist/index.html",
     "build:prod": "webpack -p --display-error-details && cp index.html dist/index.html",
-    "dev": "webpack-dev-server --inline --hot ./src/"
+    "dev": "npm run build && webpack-dev-server --inline --hot ./src/"
   },
   "devDependencies": {
     "react-hot-loader": "^4.1.2"

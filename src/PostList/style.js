@@ -26,6 +26,9 @@ export const TrackTitle = styled.a`
   &:link, &:hover, &:focus {
     text-decoration: none;
   }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const ReactPlayer = {
@@ -38,7 +41,8 @@ export const Upvotes = styled.h3`
 `;
 
 export const VideoFrame = styled.div`
-  iframe {
+  div, iframe {
+    z-index: -1;
     position: fixed;
     bottom: 0;
     right: 0;
