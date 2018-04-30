@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import { hot } from 'react-hot-loader';
 import Input from './Input';
 import PostList from './PostList';
 import Paginator from './Paginator';
-import Panel from './Transitions/Panel';
 import * as style from './style';
 
 class App extends Component {
@@ -24,4 +24,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default hot(module)(App);

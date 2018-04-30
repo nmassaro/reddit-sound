@@ -29,13 +29,20 @@ export const TrackTitle = styled.a`
 `;
 
 export const ReactPlayer = {
-  borderRadius: '12px',
-  boxShadow: '0 4px 4px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.24)',
-  margin: '20px 0'
 };
 
 export const Upvotes = styled.h3`
   display: inline-block;
   margin: 0 8px 0 0;
   min-width: 100px;
+`;
+
+export const VideoFrame = styled.div`
+  iframe {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+  }
 `;

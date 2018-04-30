@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
-import Panel from '../Transitions/Panel';
 import * as style from './style';
 
 const PostListComponent = ({ posts, playing, togglePlaying }) => (
@@ -10,14 +9,12 @@ const PostListComponent = ({ posts, playing, togglePlaying }) => (
       .filter(post => Boolean(post.data.secure_media))
       .map((post, index) => (
         <div key={index}>
-            <Panel
-            header={
             <style.TrackTitle onClick={() => togglePlaying(index)}>
                 <style.Upvotes>{post.data.ups}</style.Upvotes>
                 {post.data.title}
             </style.TrackTitle>
-            }>
-            <div className='center'>
+            { playing == index && 
+            <style.VideoFrame>
                 <ReactPlayer
                     style={style.ReactPlayer}
                     controls 
@@ -25,8 +22,8 @@ const PostListComponent = ({ posts, playing, togglePlaying }) => (
                     url={post.data.url} 
                     onEnded={() => togglePlaying(index + 1)}
                 />
-            </div>
-            </Panel>
+            </style.VideoFrame>
+            }
         </div>
       ))
       : null}
