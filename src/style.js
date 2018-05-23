@@ -10,6 +10,14 @@ export const App = styled.div`
     display: flex;
     justify-content: center;
   }
+  #postList-wrapper {
+    width: 50%;
+  }
+@media screen and (max-width: 600px) {
+  #postList-wrapper {
+    width: auto;
+  }
+}
 `;
 
 export const SiteTitle = styled.a`
