@@ -1,33 +1,22 @@
-import React from 'react';
-import ReactPlayer from 'react-player';
-import * as style from './style';
+import React from "react";
+import ReactPlayer from "react-player";
+import * as style from "./style";
 
-const PostListComponent = ({ posts, playing, togglePlaying }) => (
-    <style.PostList>
-    {posts && posts.data && posts.data.data ?
-      posts.data.data.children
-      .filter(post => Boolean(post.data.secure_media))
-      .map((post, index) => (
-        <div key={index}>
-            <style.TrackTitle onClick={() => togglePlaying(index)}>
+const PostListComponent = ({ posts, playing, setPlaying }) => (
+  <style.PostList>
+    {posts && posts.data && posts.data.data
+      ? posts.data.data.children
+          .filter(post => Boolean(post.data.secure_media))
+          .map((post, index) => (
+            <div key={index}>
+              <style.TrackTitle active={playing === post.data.url } onClick={() => setPlaying(post.data.url)}>
                 <style.Upvotes>{post.data.ups}</style.Upvotes>
                 {post.data.title}
-            </style.TrackTitle>
-            { playing == index && 
-            <style.VideoFrame>
-                <ReactPlayer
-                    style={style.ReactPlayer}
-                    controls 
-                    playing={playing === index}
-                    url={post.data.url} 
-                    onEnded={() => togglePlaying(index + 1)}
-                />
-            </style.VideoFrame>
-            }
-        </div>
-      ))
+              </style.TrackTitle>
+            </div>
+          ))
       : null}
-    </style.PostList>
+  </style.PostList>
 );
 
 export default PostListComponent;

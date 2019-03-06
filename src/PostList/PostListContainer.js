@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PostListComponent from './PostListComponent';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PostListComponent from "./PostListComponent";
 
 class PostListContainer extends Component {
   render() {
-    return (
-      <PostListComponent 
-      {...this.props}
-      />
-    );
-  } 
+    return <PostListComponent {...this.props} />;
+  }
 }
 
 const mapStateToProps = state => ({
@@ -18,10 +14,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  togglePlaying: index => dispatch({ type: 'TOGGLE_PLAYING', index })
+  setPlaying: post => dispatch({ type: "SET_PLAYING", post })
 });
 
 export default connect(
-  mapStateToProps, 
+  mapStateToProps,
   mapDispatchToProps
 )(PostListContainer);

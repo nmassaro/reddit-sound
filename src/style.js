@@ -1,34 +1,29 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const App = styled.div`
   * {
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
   }
 
   .center {
     display: flex;
     justify-content: center;
   }
-  #postList-wrapper {
-    width: 50%;
-  }
-@media screen and (max-width: 600px) {
-  #postList-wrapper {
-    width: auto;
-  }
-}
 `;
 
 export const SiteTitle = styled.a`
   margin: 40px 0;
   text-align: center;
   font-size: 70px;
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   color: #ff4566;
-	animation: text-enter 1s linear;
+  animation: text-enter 1s linear;
 
-  &:link, &:hover, &:visited, &:active {
+  &:link,
+  &:hover,
+  &:visited,
+  &:active {
     text-decoration: none;
   }
 
@@ -53,4 +48,8 @@ export const Banner = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 20px;
+`;
+
+export const Columns = styled.div`
+  display: flex;
 `;
