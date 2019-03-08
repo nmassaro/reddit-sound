@@ -4,6 +4,7 @@ import Input from "./Input";
 import PostList from "./PostList";
 import Paginator from "./Paginator";
 import Player from "./Player";
+import Timeframe from "./Timeframe";
 import * as style from "./style";
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
       <style.App>
         <style.Banner>
           <Input />
+          <Timeframe />
           <Paginator />
         </style.Banner>
         <style.Container>
