@@ -14,8 +14,8 @@ const redditSoundApp = (state = initialState, action) => {
       return {
         ...state,
         subreddit: action.data,
-        after: null,
-        before: null,
+        after: initialState.after,
+        before: initialState.before,
       };
     }
     case 'SET_PLAYING': {
@@ -28,6 +28,9 @@ const redditSoundApp = (state = initialState, action) => {
       return {
         ...state,
         timeframe: action.timeframe,
+        after: initialState.after,
+        before: initialState.before,
+        page: initialState.page,
       };
     }
     case 'FETCH_PREVIOUS_POSTS_SUCCEEDED': {

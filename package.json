@@ -3,16 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "9.10.1"
+    "node": "11.11.0"
   },
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
     "axios": "^0.16.2",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
     "es2015": "0.0.0",
     "express": "^4.16.4",
     "morgan": "^1.9.1",
@@ -20,28 +15,33 @@
     "react-dom": "^15.6.2",
     "react-player": "^0.18.0",
     "react-redux": "^5.1.1",
-    "react-scripts": "1.0.10",
+    "react-scripts": "^2.1.8",
     "react-transition-group": "^2.6.0",
     "redux": "^3.7.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-saga": "^0.15.6",
     "styled-components": "^2.4.1",
-    "uglify-js": "git://github.com/mishoo/UglifyJS2.git#harmony-v2.8.22",
-    "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.3"
+    "uglify-js": "git://github.com/mishoo/UglifyJS2.git#harmony-v2.8.22"
   },
   "scripts": {
-    "start": "npm run build",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "build": "webpack -d --display-error-details && cp index.html dist/index.html",
     "build:prod": "webpack -p --display-error-details && cp index.html dist/index.html",
     "dev": "npm run build && webpack-dev-server --inline --hot ./src/"
   },
   "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "react-hot-loader": "^4.7.2"
+    "react-hot-loader": "^4.8.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   }
 }

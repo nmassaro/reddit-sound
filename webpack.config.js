@@ -1,26 +1,31 @@
-var path = require("path");
+const path = require('path');
+const webpack = require('webpack');
 
-var DIST_DIR = path.resolve(__dirname, "dist");
-var SRC_DIR = path.resolve(__dirname, "src");
+const DIST_DIR = path.resolve(__dirname, 'dist');
+const SRC_DIR = path.resolve(__dirname, 'src');
 
-var config = {
-    entry: SRC_DIR + "/index.js",
-    output: {
-        path: DIST_DIR,
-        filename: "bundle.js"
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.js?/,
-                include: SRC_DIR,
-                loader: "babel-loader",
-                query: {
-                    presets: ["react", "es2015", "stage-2"]
-                }
-            }
-        ]
-    }
+module.exports = {
+  entry: `${SRC_DIR}/index.js`,
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
+  output: {
+    path: DIST_DIR,
+    publicPath: '/',
+    filename: 'bundle.js',
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+  },
 };
-
-module.exports = config;
